@@ -55,9 +55,9 @@ function App() {
     }
 
     return filteredProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
+      ({ id,img, title, star, reviews, prevPrice, newPrice }) => (
         <Card
-          key={Math.random()}
+          key={id}
           img={img}
           title={title}
           star={star}
@@ -73,17 +73,19 @@ function App() {
 
   return (
     <>
-      <Sidebar handleChange={handleChange} />
+
       <ShopContextProvider>
           <Router>
+          <Sidebar handleChange={handleChange} />
           <Navigation query={query} handleInputChange={handleInputChange} />
           <Routes>
           <Route path="/cart" element={<Cart />}/>
+          <Route path="/" element={<><Recommended handleClick={handleClick} />
+                                    <Products result={result} /> < />}/>
           </Routes>
           </Router>
       </ShopContextProvider>
-      <Recommended handleClick={handleClick} />
-      <Products result={result} />
+
     </>
   );
 }

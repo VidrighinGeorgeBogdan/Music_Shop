@@ -1,9 +1,16 @@
 import { BsFillBagFill } from "react-icons/bs";
+import {ShopContext} from "../context/shop_context";
+import {useContext} from "react";
 
-const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
+const Card = ({ id,img, title, star, reviews, prevPrice, newPrice }) => {
+  const {addToCart, cartItems} = useContext(ShopContext)
+  const cartItemCount = cartItems[id];
+
   return (
     <>
-      <section className="card">
+      <section onClick={() => {
+        addToCart(id)
+      }} className="card">
         <img src={img} alt={title} className="card-img" />
         <div className="card-details">
           <h3 className="card-title">{title}</h3>
@@ -15,9 +22,10 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
             <div className="price">
               <del>{prevPrice}</del> {newPrice}
             </div>
-            <div className="bag">
+            <button className="bag" onClick={() => addToCart(id)}>
+              Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>} >
               <BsFillBagFill className="bag-icon" />
-            </div>
+            </button>
           </section>
         </div>
       </section>

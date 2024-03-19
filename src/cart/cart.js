@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {data} from "../db/data"
+import {data as PRODUCT} from "../db/data"
 import { ShopContext } from "../context/shop_context"
 import { CartItem } from "./cart_item"
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ export const Cart = () => {
                 <h1>Your Cart Items</h1>
             </div>
             <div className="cart">
-                {data.map((product) => {
+                {PRODUCT.map((product) => {
                     if (cartItems[product.id] !== 0) {
                         return <CartItem data={product} />;
                     }
