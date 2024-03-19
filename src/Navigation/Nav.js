@@ -1,5 +1,6 @@
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = ({ handleInputChange, query }) => {
@@ -11,19 +12,13 @@ const Nav = ({ handleInputChange, query }) => {
           type="text"
           onChange={handleInputChange}
           value={query}
-          placeholder="Enter your search shoes."
+          placeholder="Search for music ..."
         />
       </div>
       <div className="profile-container">
-        <a href="#">
-          <FiHeart className="nav-icons" />
-        </a>
-        <a href="">
+        <Link to="/cart">
           <AiOutlineShoppingCart className="nav-icons" />
-        </a>
-        <a href="">
-          <AiOutlineUserAdd className="nav-icons" />
-        </a>
+        </Link>
       </div>
     </nav>
   );
