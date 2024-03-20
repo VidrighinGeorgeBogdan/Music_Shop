@@ -1,11 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-import data from "../db/data";
+import {data as PRODUCTS} from "../db/data";
 
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
     let cart = {};
-    for (let i = 1; i < data.length + 1; i++) {
+    for (let i = 1; i < PRODUCTS.length + 1; i++) {
         cart[i] = 0;
     }
     return cart;
@@ -18,8 +18,8 @@ export const ShopContextProvider = (props) => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = data.find((product) => product.id === Number(item));
-                totalAmount += cartItems[item] * itemInfo.price;
+                let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
+                totalAmount += cartItems[item] * itemInfo.newPrice;
             }
         }
         return totalAmount;
@@ -39,6 +39,7 @@ export const ShopContextProvider = (props) => {
 
     const checkout = () => {
         setCartItems(getDefaultCart());
+
     };
 
     const contextValue = {

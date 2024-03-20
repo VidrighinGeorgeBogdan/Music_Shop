@@ -55,15 +55,17 @@ function App() {
     }
 
     return filteredProducts.map(
-      ({ id,img, title, star, reviews, prevPrice, newPrice }) => (
+      ({ id,img, title, star, reviews, prevPrice, newPrice,genre,category }) => (
         <Card
-          key={id}
+          id={id}
           img={img}
           title={title}
           star={star}
           reviews={reviews}
           prevPrice={prevPrice}
           newPrice={newPrice}
+          genre={genre}
+          category={category}
         />
       )
     );

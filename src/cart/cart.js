@@ -17,7 +17,7 @@ export const Cart = () => {
                 <h1>Your Cart Items</h1>
             </div>
             <div className="cart">
-                {PRODUCT.map((product) => {
+            {PRODUCT.map((product) => {
                     if (cartItems[product.id] !== 0) {
                         return <CartItem data={product} />;
                     }
@@ -31,7 +31,7 @@ export const Cart = () => {
                     <button
                         onClick={() => {
                             checkout();
-                            navigate("/checkout");
+                            navigate("/");
                         }}
                     >
                         {" "}
