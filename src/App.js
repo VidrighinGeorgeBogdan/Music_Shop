@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {ShopContextProvider} from "./context/shop_context";
 import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
-import products from "./db/data";
+import products, {data} from "./db/data";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
 import Card from "./components/Card";
@@ -17,14 +17,17 @@ function App() {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (event) => {
-    setQuery(event.target.value);
+
+      setQuery(event.target.innerHTML);
   };
+
 
   const filteredItems = products.filter(
     (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
 
-  // ----------- Radio Filtering -----------
+
+    // ----------- Radio Filtering -----------
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -42,7 +45,7 @@ function App() {
       filteredProducts = filteredItems;
     }
 
-    // Applying selected filter
+      // Applying selected filter
     if (selected) {
       filteredProducts = filteredProducts.filter(
         ({ category, color, genre, newPrice, title }) =>
@@ -54,8 +57,10 @@ function App() {
       );
     }
 
+    //filteredProducts = products;
+
     return filteredProducts.map(
-      ({ id,img, title, star, reviews, prevPrice, newPrice,genre,category }) => (
+      ({ id,img, title, star, reviews, prevPrice, newPrice,genre,category,description }) => (
         <Card
           id={id}
           img={img}
@@ -66,9 +71,13 @@ function App() {
           newPrice={newPrice}
           genre={genre}
           category={category}
+          description={description}
         />
+
       )
     );
+      console.log('abcd');
+
   }
 
   const result = filteredData(products, selectedCategory, query);

@@ -11,6 +11,7 @@ export const data = [
     newPrice: "200",
     genre: "Rap",
     category: "Recent",
+    description:"Highly Rated Album by listeners",
   },
   {
     id: 2,
@@ -22,6 +23,8 @@ export const data = [
     newPrice: "200",
     genre: "Rap",
     category: "Old",
+    description:"Marked as a Classic",
+
   },
 
   {
@@ -34,6 +37,8 @@ export const data = [
     newPrice: "200",
     genre: "Rap",
     category: "Recent",
+    description:"Influential Album",
+
   },
   {
     id: 4,
@@ -45,6 +50,8 @@ export const data = [
     newPrice: "200",
     genre: "Trap",
     category: "Recent",
+    description:"Starting to become a Classic",
+
   },
   {
     id: 5,
@@ -56,6 +63,8 @@ export const data = [
     newPrice: "200",
     genre: "Trap",
     category: "Recent",
+    description:"Looked upon with admiration",
+
   },
   {
     id: 6,
@@ -65,8 +74,10 @@ export const data = [
     reviews: "(17233 reviews)",
     prevPrice: "$140,00",
     newPrice: "50",
-    genre: "Adidas",
+    genre: "Trap",
     category: "Recent",
+    description:"Revolutionary Album",
+
   },
 
   {
@@ -79,6 +90,8 @@ export const data = [
     newPrice: "50",
     genre: "Trap",
     category: "Recent",
+    description:"One of the best of its kind",
+
   },
 /*
   {
@@ -102,6 +115,8 @@ export const data = [
     newPrice: "200",
     genre: "Punk",
     category: "Old",
+    description:"An album that was ahead of tis time",
+
   },
 
   {
@@ -114,6 +129,8 @@ export const data = [
     newPrice: "150",
     genre: "Punk",
     category: "Old",
+    description:"Truly a Classic",
+
   },
   {
     id: 10,
@@ -125,6 +142,8 @@ export const data = [
     newPrice: "110",
     genre: "Rock",
     category: "Old",
+    description:"One of the best of its genre",
+
   },
   {
     id: 11,
@@ -136,6 +155,8 @@ export const data = [
     newPrice: "100",
     genre: "Rock",
     category: "Old",
+    description:"The album that marked a generation",
+
   },
   {
     id: 12,
@@ -147,6 +168,8 @@ export const data = [
     newPrice: "120",
     genre: "Rock",
     category: "Old",
+    description:"Remembered as a Classic",
+
   },
 ];
 
